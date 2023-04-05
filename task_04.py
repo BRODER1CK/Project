@@ -1,6 +1,12 @@
 def sort_list(list):
     if list:
-        list[list.index(max(list))], list[list.index(min(list))] = list[list.index(min(list))], list[list.index(max(list))]
+        maximum = max(list)
+        minimum = min(list)
+        for i in range(len(list)):
+            if list[i] == maximum:
+                list[i] = minimum
+            elif list[i] == minimum:
+                list[i] = maximum
         list.append(min(list))
         return list
     else:
