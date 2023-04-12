@@ -17,9 +17,9 @@ class Dessert:
         self._name = name
     @calories.setter
     def calories(self, calories):
-        self._calories = calories
+        self._calories = int(calories)
 class JellyBean(Dessert):
-    def __init__(self, name=None, calories=None, flavor=None):
+    def __init__(self, name=None, calories=0, flavor=None):
         super().__init__(name, calories)
         self._flavor = flavor
     def is_healthy(self):

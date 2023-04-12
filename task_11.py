@@ -17,4 +17,4 @@ class Dessert:
         self._name = name
     @calories.setter
     def calories(self, calories):
-        self._calories = calories
+        self._calories = int(calories)
