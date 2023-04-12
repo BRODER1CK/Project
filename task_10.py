@@ -1,8 +1,5 @@
+from string import punctuation
 def count_words(string):
-    splitted = string.lower().split()
-    dictionary = dict()
-    for i in splitted:
-        i = i.lower()
-        if i.isalpha():
-            dictionary[i] = splitted.count(i)
+    splitted = ''.join(filter(lambda x: x.isalpha() or x.isspace(), string.lower())).split()
+    dictionary = {i: splitted.count(i) for i in splitted}
     return dictionary
