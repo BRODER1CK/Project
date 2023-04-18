@@ -20,4 +20,7 @@ class Dessert:
         self._name = name
     @calories.setter
     def calories(self, calories):
-        self._calories = int(calories) if calories.isdigit() else calories
+        if isinstance(calories, str):
+            self._calories = int(calories) if calories.isdigit() else calories
+        else:
+            self._calories = calories
