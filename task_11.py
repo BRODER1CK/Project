@@ -3,7 +3,10 @@ class Dessert:
         self._name = name
         self._calories = int(calories)
     def is_healthy(self):
-        return True if self._calories < 200 else False
+        if isinstance(self._calories, int):
+            return True if self._calories < 200 else False
+        else:
+            return True
     def is_delicious(self):
         return True
     @property
@@ -17,4 +20,4 @@ class Dessert:
         self._name = name
     @calories.setter
     def calories(self, calories):
-        self._calories = int(calories)
+        self._calories = int(calories) if calories.isdigit() else calories
